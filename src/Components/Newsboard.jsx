@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { NewsItem } from "./NewsItem";
 
-export const Newsboard = () => {
+export const Newsboard = ({category}) => {
     const [articles, setArticles] = useState([]);
 
     // useEffect(() => {
@@ -14,7 +14,7 @@ export const Newsboard = () => {
     // }, []);
 
     useEffect(() => {
-        const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${import.meta.env.VITE_API_KEY}`
+        const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${import.meta.env.VITE_API_KEY}`
 
         fetch(url)
             .then(response => {
@@ -31,7 +31,10 @@ export const Newsboard = () => {
                 }
             })
             .catch(error => console.error("Error fetching news:", error));
-    }, []);
+    }, [category]);
+
+    console.log(articles);
+    
 
     return (
         <div>

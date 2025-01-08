@@ -1,5 +1,5 @@
 
-export const Navbar = () => {
+export const Navbar = ({setCategory}) => {
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
             <div className="container-fluid">
@@ -13,14 +13,27 @@ export const Navbar = () => {
                             <a className="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Features</a>
+                            <div className="dropdown">
+                                <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Categories
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a className="dropdown-item" onClick={()=>setCategory('general')}>General</a></li>
+                                    <li><a className="dropdown-item" onClick={()=>setCategory('business')}>Business</a></li>
+                                    <li><a className="dropdown-item" onClick={()=>setCategory('entertainment')}>Entertainment</a></li>
+                                    <li><a className="dropdown-item" onClick={()=>setCategory('health')}>Health</a></li>
+                                    <li><a className="dropdown-item" onClick={()=>setCategory('science')}>Science</a></li>
+                                    <li><a className="dropdown-item" onClick={()=>setCategory('sports')}>Sports</a></li>
+                                    <li><a className="dropdown-item" onClick={()=>setCategory('technology')}>Technology</a></li>
+
+
+                                </ul>
+                            </div>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="#">Pricing</a>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link disabled" aria-disabled="true">Disabled</a>
-                        </li>
+
                     </ul>
                 </div>
             </div>
