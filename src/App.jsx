@@ -5,10 +5,11 @@ import { useState } from "react"
 
 export const App = () => {
   const [category, setCategory] = useState('general');
+  const [searchResults, setSearchResults] = useState([]);
   return (
     <div>
-      <Navbar setCategory={setCategory}/>
-      <Newsboard category={category}/>
+      <Navbar setCategory={setCategory} setSearchResults={setSearchResults}/>
+      <Newsboard category={category} searchResults={searchResults}/>
     </div>
   )
 }
