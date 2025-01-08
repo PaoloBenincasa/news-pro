@@ -1,0 +1,14 @@
+.newsList{
+  column-count: 5 ;
+  width: 100%;
+}
+
+.cardImage{
+  height: 200px !important;
+  width: 300px;
+}
+
+.card{
+  height: 430px;
+  
+}
